@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Heleneide Gessel | Advocacia de Elite</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        :root {
+            --primary: #FFFFFF;
+            --secondary: #0A0A0A;
+            --accent: #D4AF37; /* Tom dourado sutil para autoridade */
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.12);
+            --font-main: 'DM Sans', sans-serif;
+            --font-title: 'Montserrat', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: #000;
+            color: var(--primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .bg-image {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        .bg-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.95) 100%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 40px 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+
+        /* --- LOGO --- */
+        .logo-wrapper {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo-container {
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            width: 160px;
+            height: auto;
+            /* Removido o filter invert para que a logo apareça na cor original. 
+               Se sua logo for preta e o fundo escuro, mude para: filter: brightness(0) invert(1); */
+            display: block;
+        }
+
+        .office-name {
+            font-family: var(--font-title);
+            font-size: 0.7rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: var(--accent);
+        }
+
+        /* --- BOTÕES --- */
+        .links-column {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .modern-btn {
+            position: relative;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            padding: 20px 25px;
+            text-decoration: none;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        .modern-btn:hover {
+            background: var(--primary);
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        .btn-label {
+            font-family: var(--font-title);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        /* --- FORMULÁRIO --- */
+        .form-card {
+            margin-top: 20px;
+            padding: 35px 25px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .form-header {
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            padding: 12px 5px;
+            color: #fff;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        select option { background: #111; color: #fff; }
+
+        input:focus, select:focus {
+            border-bottom-color: var(--accent);
+        }
+
+        .submit-btn {
+            width: 100%;
+            margin-top: 15px;
+            padding: 20px;
+            background: var(--primary);
+            color: #000;
+            border: none;
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        /* --- BOTÃO FLUTUANTE SHARE --- */
+        .share-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            transition: 0.3s;
+        }
+
+        .share-float:hover {
+            background: #25D366;
+            border-color: #25D366;
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            opacity: 0.5;
+            padding-bottom: 40px;
+        }
+
+        .footer-info {
+            font-size: 0.4rem;
+            letter-spacing: 2px;
+            line-height: 2.2;
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="bg-image"></div>
+    <div class="bg-overlay"></div>
+
+    <div class="container">
+        <header class="logo-wrapper">
+            <div class="logo-container">
+                <img src="logo.png" alt="Gessel Advocacia" onerror="this.src='https://via.placeholder.com/200x80/000000/FFFFFF?text=GESSEL+ADVOCACIA'">
+            </div>
+            <div class="office-name">Direito de Família e Sucessões</div>
+        </header>
+
+        <div class="links-column">
+            <a href="https://wa.me/5521995453635" class="modern-btn" target="_blank" onclick="fbq('track', 'Contact')">
+                <span class="btn-label">Falar com Especialista</span>
+                <i class="ph ph-whatsapp-logo"></i>
+            </a>
+
+            <div class="form-card">
+                <div class="form-header">ANÁLISE DE CASO PRIORITÁRIA</div>
+                <form id="leadForm">
+                    <div class="input-group">
+                        <input type="text" id="name" placeholder="NOME COMPLETO" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="phone" placeholder="WHATSAPP (DDD)" required>
+                    </div>
+                    <div class="input-group">
+                        <select id="subject" required>
+                            <option value="" disabled selected>ASSUNTO DE INTERESSE</option>
+                            <option value="Divórcio / Separação">Divórcio ou Separação</option>
+                            <option value="Pensão Alimentícia">Pensão Alimentícia</option>
+                            <option value="Inventário / Herança">Inventário ou Herança</option>
+                            <option value="Guarda de Menores">Guarda de Menores</option>
+                            <option value="Outros Assuntos">Outros Assuntos</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn" id="btnSubmit">ENVIAR E INICIAR NO WHATSAPP</button>
+                </form>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-info">
+                OAB/RJ 000.000<br>
+                ESTRATÉGIA JURÍDICA PERSONALIZADA<br>
+                ©2026 GESSEL ADVOCACIA
+            </div>
+        </footer>
+    </div>
+
+    <a href="#" class="share-float" id="shareBtn" title="Compartilhar">
+        <i class="ph ph-share-network" style="font-size: 1.5rem;"></i>
+    </a>
+
+    <script>
+        // --- CONFIGURAÇÕES ---
+        const CONFIG = {
+            whatsappNumber: '5521995453635',
+            webhookUrl: 'SUA_URL_DO_N8N_OU_APPSCRIPT',
+            pixelId: 'SEU_PIXEL_ID'
+        };
+
+        // Máscara Simples para Telefone
+        document.getElementById('phone').addEventListener('input', function (e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,5})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+
+        // Lógica do Formulário
+        document.getElementById('leadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const btn = document.getElementById('btnSubmit');
+            const nome = document.getElementById('name').value;
+            const fone = document.getElementById('phone').value;
+            const assunto = document.getElementById('subject').value;
+
+            btn.disabled = true;
+            btn.innerText = "REGISTRANDO...";
+
+            const payload = {
+                nome,
+                whatsapp: fone,
+                assunto,
+                origem: window.location.href,
+                data: new Date().toLocaleString('pt-BR')
+            };
+
+            // 1. Enviar para Webhook (n8n / Google App Script)
+            try {
+                await fetch(CONFIG.webhookUrl, {
+                    method: 'POST',
+                    mode: 'no-cors', // Para evitar erros de CORS se o servidor não estiver configurado
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+            } catch (err) { console.log("Erro webhook, seguindo para WhatsApp..."); }
+
+            // 2. Rastreamento (Pixel e GTM)
+            if(typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: assunto });
+            if(typeof dataLayer !== 'undefined') dataLayer.push({'event': 'form_submission', 'subject': assunto});
+
+            // 3. Redirecionar para WhatsApp
+            const msgZap = `Olá, Dra. Heleneide. Me chamo ${nome}. Gostaria de uma análise sobre: *${assunto}*.`;
+            const wpUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msgZap)}`;
+            
+            setTimeout(() => {
+                window.location.href = wpUrl;
+            }, 500);
+        });
+
+        // Lógica de Compartilhamento
+        document.getElementById('shareBtn').addEventListener('click', (e) => {
+            e.preventDefault();
+            const text = "Conheça Gessel Advocacia - Especialista em Direito de Família:";
+            const url = window.location.href;
+            window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text + " " + url)}`, '_blank');
+        });
+    </script>
+
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', CONFIG.pixelId);
+        fbq('track', 'PageView');
+    </script>
+</body>
+</html>
